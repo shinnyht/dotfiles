@@ -6,10 +6,8 @@ local BLUE=$'%{\e[1;34m%}'
 local CYAN=$'%{\e[0;36m%}'
 local PURPLE=$'%{\e[0;35m%}'
 local DEFAULT=$'%{\e[1;m%}'
-local AWS_DEFAULT_PROFILE=t0
-local CONFIGCOLOR=$YELLOW
 
-PROMPT='%{$GREEN%}%n@%{$PURPLE%}${HOSTNAME}%{$CONFIGCOLOR%}[${AWS_DEFAULT_PROFILE}]%{${reset_color}%}$ '
+PROMPT='%{$GREEN%}%n@%{$PURPLE%}${HOSTNAME}%{${reset_color}%}$ '
 RPROMPT='%{$RED%}%{$CYAN%}%d%{$reset_color%}'
  
 # Completion
@@ -74,22 +72,6 @@ alias vimh='vim ~/.ssh/known_hosts'
 alias tunnel="ssh -D 3333 dali"
 alias javac="javac -J-Dfile.encoding=UTF8"
 
-function envt0 {
-    export CONFIGCOLOR=$YELLOW
-    export AWS_DEFAULT_PROFILE=t0
-}
-function envs0us {
-    export CONFIGCOLOR=$RED
-    export AWS_DEFAULT_PROFILE=s0-us
-}
-function envs0eu {
-    export CONFIGCOLOR=$CYAN
-    export AWS_DEFAULT_PROFILE=s0-eu
-}
-function envs0jp {
-    export CONFIGCOLOR=$BLUE
-    export AWS_DEFAULT_PROFILE=s0-jp
-}
 function mkisofs() {
     hdiutil makehybrid -iso -joliet -o ~/Desktop/$1 $2
 }
